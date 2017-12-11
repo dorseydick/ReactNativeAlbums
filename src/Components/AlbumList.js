@@ -4,14 +4,21 @@ import { Text, View } from 'react-native';
 import axios from 'axios';
 
 class AlbumList extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { albums: [] };
+  }
+
   componentWillMount() {
     axios.get('https://rallycoding.herokuapp.com/api/music_albums')
     .then(
-      response => console.log(response)
+      response => this.setState({ albums: response.data })
     );
   }
 
   render() {
+    console.log(this.state);
     return (
       <View>
         <Text>Album List</Text>
