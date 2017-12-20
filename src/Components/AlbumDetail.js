@@ -72,8 +72,8 @@ const styles = {
   },
   imageStyle: {
     height: 300,
-    flex: 1
-    //width: null
+    flex: 1,
+    width: null
   }
 };
 
